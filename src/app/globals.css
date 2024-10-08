@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mont {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -50,6 +60,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -82,7 +93,52 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.banner {
+  min-height: 100vh;
+  background-color: black;
+  background-image: url("https://pixner.net/aikeu/assets/images/banner/banner-one-bg.png");
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.banner::before {
+  position: absolute;
+  top: 0px;
+  left: -150px;
+  content: "";
+  width: 500px;
+  height: 500px;
+  min-height: 300px;
+  border-radius: 50%;
+  background: rgba(75, 255, 223, 0.24);
+  filter: blur(227px);
+  z-index: -1;
+}
+
+.banner::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100px;
+  content: "";
+  width: 430px;
+  height: 430px;
+  min-height: 300px;
+  border-radius: 50%;
+  background: rgba(75, 169, 255, 0.44);
+  filter: blur(272px);
+  z-index: -1;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
