@@ -8,6 +8,10 @@ const nextConfig = {
       },
     ],
   },
+  compiler: {
+    removeConsole: true,
+    styledComponents: true,
+  },
 };
 
 export default nextConfig;

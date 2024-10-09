@@ -78,8 +78,9 @@ export function DreamForgeComponent() {
     a.click();
   };
 
-  const publishImage = async () => {
-    const upload = await postImage(image);
+  const uploadImage = async (base64data: string) => {
+    console.log(base64data);
+    const upload = await postImage(base64data);
 
     if (upload) {
       toast.success("Image published successfully", {
@@ -94,9 +95,21 @@ export function DreamForgeComponent() {
     getAllImages();
   };
 
+  const publishImage = async () => {
+    // Image is in format of blob, so we need to convert it to base64 using readAsDataURL
+    const response = await fetch(image);
+    const blob = await response.blob();
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onloadend = async () => {
+      const base64data = reader.result;
+      await uploadImage(base64data as string);
+    };
+  };
+
   useEffect(() => {
     getAllImages();
-  }, [])
+  }, []);
 
   const getAllImages = async () => {
     const allImages = await getImages();
