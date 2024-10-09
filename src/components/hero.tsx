@@ -58,12 +58,12 @@ const Hero = (props: Props) => {
 
   return (
     <div className="banner relative overflow-x-hidden w-full md:min-h-screen flex items-center justify-center bg-[#030015] text-gray-50">
-      <div className="overflow-x-hidden mt-20">
+      <div className="overflow-x-hidden mt-5">
         <h1 className="mont text-5xl py-5 xl:text-6xl 2xl:text-7xl font-[700] text-center xl:leading-[60px] 2xl:leading-[80px] sm:mt-20 mx-4">
           Make <span className="text-[#64FF4B]">AI image</span> <br /> With Your{" "}
           Imagination
         </h1>
-        <div className="text-base mx-4 mt-1 sm:text-lg flex justify-center w-full text-center mb-12 text-gray-300">
+        <div className="text-base mx-auto mt-1 sm:text-lg flex justify-center w-full text-center mb-12 text-gray-300">
           <p className="max-w-3xl">
             Transform your ideas into stunning visuals with our AI-powered image
             generation tool. Unleash your creativity and bring your imagination
