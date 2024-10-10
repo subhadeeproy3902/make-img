@@ -11,8 +11,8 @@ function Gallery({ items }: { items: ImageProps[] }) {
 
   return (
     <>
-      <div className="container mx-auto sm:p-4 px-0 ">
-        <div className="columns-2 md:columns-3 2xl:columns-4 gap-4">
+      <div className="container mx-auto p-4 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8">
           <>
             {items.map((item, index) => (
               <ImageItem
@@ -45,14 +45,14 @@ function ImageItem({ item, index, setSelected }: ImageItemProps) {
       initial="hidden"
       animate={isInView && "visible"}
       ref={ref}
-      className="inline-block group w-full rounded-md  relative dark:bg-black bg-white  before:absolute before:top-0 before:content-[''] before:h-full before:w-full hover:before:bg-gradient-to-t dark:before:from-gray-900  before:from-gray-200/90 before:from-5% before:to-transparent before:to-90% cursor-pointer"
+      className="inline-block group w-full relative dark:bg-black bg-white  before:absolute before:top-0 before:content-[''] before:h-full before:w-full hover:before:bg-gradient-to-t dark:before:from-gray-900  before:from-gray-200/90 before:from-5% before:to-transparent before:to-90% cursor-pointer rounded-md"
       onClick={() => setSelected(item)}
     >
       <motion.img
         layoutId={`card-${item.id}`}
         whileHover={{ scale: 1.025 }}
         src={item.url}
-        className="w-full bg-base-100 shadow-xl image-full cursor-pointer"
+        className="w-full bg-base-100 shadow-xl image-full cursor-pointer rounded-md"
       />
       <div className="flex flex-wrap mt-2 absolute bottom-0 left-0 p-2 group-hover:opacity-100 opacity-0 font-semibold ">
         <h1>{item.prompt}</h1>
@@ -119,15 +119,15 @@ function Modal({ selected, setSelected }: ModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelected(null)}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 cursor-pointer overflow-y-scroll"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 cursor-pointer overflow-y-scroll"
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
             layoutId={`card-${selected.id}`}
-            className="w-full max-w-[1000px] relative overflow-x-hidden mx-auto my-8 cursor-default dark:bg-[#202020] bg-[#ebebeb] "
+            className="w-full max-w-[1000px] relative overflow-x-hidden mx-auto my-8 cursor-default"
           >
             <button
-              className="absolute top-2 right-2  p-2 mix-blend-multiply"
+              className="absolute top-2 right-2  p-2"
               onClick={() => setSelected(null)}
             >
               <X />

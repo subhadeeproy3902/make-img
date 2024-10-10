@@ -1,5 +1,5 @@
 "use client";
-import { MoveRight } from "lucide-react";
+import { Github, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -72,10 +72,10 @@ const Hero = (props: Props) => {
         </div>
         <div className="flex mx-6 flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
           <Link
-            href="/about"
+            href="https://github.com/subhadeeproy3902/make-img"
             className="w-full sm:w-auto flex gap-2 items-center justify-center px-8 py-2 rounded-lg font-semibold text-lg transition-colors bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80"
           >
-            About <MoveRight size={24} />
+            Github <Github size={18} />
           </Link>
           <Link
             href="#get-started"

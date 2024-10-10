@@ -9,7 +9,12 @@ const nextConfig = {
     ],
   },
   compiler: {
-    removeConsole: true
+    removeConsole: true,
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '10mb',
+    },
   },
 };
 

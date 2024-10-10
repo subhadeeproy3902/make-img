@@ -4,7 +4,15 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Wand2, Download, Share2, Zap, Smile } from "lucide-react";
+import {
+  Sparkles,
+  Wand2,
+  Download,
+  Share2,
+  Zap,
+  Smile,
+  Loader,
+} from "lucide-react";
 import Image from "next/image";
 import { Textarea } from "./ui/textarea";
 import {
@@ -33,8 +41,8 @@ export function DreamForgeComponent() {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
   const [error, setError] = useState("");
-  const [imagePublished, setImagePublished] = useState(false);
   const [allImages, setAllImages] = useState<ImageProps[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
     if (!prompt) {
@@ -94,17 +102,19 @@ export function DreamForgeComponent() {
     }
 
     getAllImages();
+    setLoading(false);
   };
 
   const publishImage = async () => {
+    setLoading(true);
     // Image is in format of blob, so we need to convert it to base64 using readAsDataURL
     const response = await fetch(image);
     const blob = await response.blob();
     const reader = new FileReader();
     reader.readAsDataURL(blob);
     reader.onloadend = async () => {
-      const base64data = reader.result;
-      await uploadImage(base64data as string);
+      const data = reader.result;
+      await uploadImage(data as string);
     };
   };
 
@@ -294,7 +304,11 @@ export function DreamForgeComponent() {
                   className="bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80"
                   onClick={publishImage}
                 >
-                  <Share2 className="mr-2 h-4 w-4" />
+                  {loading ? (
+                    <Loader className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Share2 className="mr-2 h-4 w-4" />
+                  )}
                   Publish
                 </Button>
               </motion.div>
