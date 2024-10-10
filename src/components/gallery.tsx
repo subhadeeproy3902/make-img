@@ -3,8 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { Download, X } from "lucide-react";
+import { ArrowUpRight, Download, Link, X } from "lucide-react";
 import { ImageProps } from "./dream-forge";
+import { Button } from "./ui/button";
 
 function Gallery({ items }: { items: ImageProps[] }) {
   const [selected, setSelected] = useState(null);
@@ -54,8 +55,13 @@ function ImageItem({ item, index, setSelected }: ImageItemProps) {
         src={item.url}
         className="w-full bg-base-100 shadow-xl image-full cursor-pointer rounded-md"
       />
-      <div className="flex flex-wrap mt-2 absolute bottom-0 left-0 p-2 group-hover:opacity-100 opacity-0 font-semibold ">
-        <h1>{item.prompt}</h1>
+      <div className="flex flex-wrap justify-end mt-2 absolute bottom-0 left-0 p-2 group-hover:opacity-100 opacity-0 font-semibold ">
+        {/* Link button */}
+        <div className="flex gap-2">
+          <Button className="items-center px-2 py-2 w-10 h-10 bg-black text-white rounded-full font-semibold">
+            <ArrowUpRight size={20} />
+          </Button>
+        </div>
       </div>
     </motion.figure>
   );
