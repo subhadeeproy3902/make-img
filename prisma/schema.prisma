@@ -16,5 +16,6 @@ datasource db {
 model Images {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   url       String
+  prompt    String
   createdAt DateTime @default(now())
 }

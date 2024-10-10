@@ -9,8 +9,7 @@ const nextConfig = {
     ],
   },
   compiler: {
-    removeConsole: true,
-    styledComponents: true,
+    removeConsole: true
   },
 };
 

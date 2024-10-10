@@ -2,17 +2,18 @@
 
 import { db } from "@/lib/db"
 
-export async function postImage (url: string) {
+export async function postImage(url: string, prompt: string) {
   const image = await db.images.create({
     data: {
-      url
+      url,
+      prompt
     }
   })
 
   return image
 }
 
-export async function getImages () {
+export async function getImages() {
   // Sorted by newest first
   const images = await db.images.findMany({
     orderBy: {

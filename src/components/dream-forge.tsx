@@ -21,6 +21,7 @@ import { getImages, postImage } from "@/actions/images.actions";
 export interface ImageProps {
   id: string;
   url: string;
+  prompt: string;
   createdAt: Date;
 }
 
@@ -80,7 +81,7 @@ export function DreamForgeComponent() {
 
   const uploadImage = async (base64data: string) => {
     console.log(base64data);
-    const upload = await postImage(base64data);
+    const upload = await postImage(base64data, prompt);
 
     if (upload) {
       toast.success("Image published successfully", {
@@ -306,7 +307,7 @@ export function DreamForgeComponent() {
           <h1 className="text-4xl lg:text-5xl font-bold my-20 bg-gradient-to-b from-white to-green-900/30 bg-clip-text text-transparent mont">
             View Gallery
           </h1>
-          <Gallery images={allImages} />
+          <Gallery items={allImages} />
         </div>
       </div>
     </>
