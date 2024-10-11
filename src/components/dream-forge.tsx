@@ -12,6 +12,7 @@ import {
   Zap,
   Smile,
   Loader,
+  Loader2,
 } from "lucide-react";
 import Image from "next/image";
 import { Textarea } from "./ui/textarea";
@@ -45,6 +46,7 @@ export function DreamForgeComponent() {
   const [error, setError] = useState("");
   const [allImages, setAllImages] = useState<ImageProps[]>([]);
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
 
   const handleGenerate = async () => {
     if (!prompt) {
@@ -129,11 +131,11 @@ export function DreamForgeComponent() {
   };
 
   useEffect(() => {
-    setLoading(true);
+    setLoading2(true);
     getAllImages();
     setTimeout(() => {
-      setLoading(false);
-    }, 2500);
+      setLoading2(false);
+    }, 4000);
   }, []);
 
   const getAllImages = async () => {
@@ -145,7 +147,10 @@ export function DreamForgeComponent() {
 
   return (
     <>
-      <div className="bg-[#040107] text-purple-50 flex justify-center items-center w-full" id="generator">
+      <div
+        className="bg-[#040107] text-purple-50 flex justify-center items-center w-full"
+        id="generator"
+      >
         <div className="max-w-7xl mt-20 sm:mt-0 w-full flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 p-6 lg:p-8 flex flex-col justify-start mt-2">
             <motion.div
@@ -331,13 +336,14 @@ export function DreamForgeComponent() {
         </div>
       </div>
       <div className="bg-[#040107] text-purple-50 flex justify-center items-center w-full">
-        <div className="flex justify-center items-center w-full flex-col mb-36">
+        <div className="flex justify-center items-center w-full flex-col mb-48">
           <h1 className="text-4xl lg:text-5xl font-bold my-20 bg-gradient-to-b from-white to-green-900/30 bg-clip-text text-transparent mont">
             View Gallery
           </h1>
-          {loading && (
-            <div className="flex items-center justify-center">
-              <Loader className="w-10 h-10 animate-spin" />
+          {loading2 && (
+            // Spinning loader here without icon
+            <div className="w-full h-full flex items-center justify-center">
+              <Loader2 className="w-16 h-16 text-lime-300 animate-spin" />
             </div>
           )}
           <Gallery items={allImages} />
