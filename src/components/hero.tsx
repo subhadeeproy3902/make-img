@@ -1,4 +1,5 @@
 "use client";
+import { url } from "inspector";
 import { Github, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,37 +10,37 @@ type Props = {};
 
 const rowOneImages = [
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/one.png",
+    url: "/1.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/two.png",
+    url: "/2.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/three.png",
+    url: "/3.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/four.png",
+    url: "/4.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/five.png",
+    url: "/5.png",
   },
 ];
 
 const rowTwoImages = [
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/one.png",
+    url: "/6.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/two.png",
+    url: "/7.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/three.png",
+    url: "/8.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/four.png",
+    url: "/9.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/five.png",
+    url: "/10.png",
   },
 ];
 
@@ -92,6 +93,7 @@ const Hero = (props: Props) => {
                   src={i.url}
                   key={index}
                   alt=""
+                  loading="lazy"
                   className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
                   width={500}
                   height={300}

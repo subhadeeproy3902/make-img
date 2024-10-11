@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  scroll-behavior: smooth;
+}
+
 .mont {
   font-family: 'Montserrat', sans-serif;
 }
