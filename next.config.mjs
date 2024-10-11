@@ -7,6 +7,7 @@ const nextConfig = {
         hostname: "*",
       },
     ],
+    unoptimized: false
   },
   compiler: {
     removeConsole: true,
