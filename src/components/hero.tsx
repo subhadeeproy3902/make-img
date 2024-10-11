@@ -9,37 +9,37 @@ type Props = {};
 
 const rowOneImages = [
   {
-    url: "https://i.postimg.cc/fT1k2q8w/one.png",
+    url: "/one.png",
   },
   {
-    url: "https://i.postimg.cc/4xhPqMZw/two.png",
+    url: "/two.png",
   },
   {
-    url: "https://i.postimg.cc/SsVfcb7Q/three.png",
+    url: "/three.png",
   },
   {
-    url: "https://i.postimg.cc/hGsd5bJp/four.png",
+    url: "/four.png",
   },
   {
-    url: "https://i.postimg.cc/ZKv65dg5/five.png",
+    url: "/five.png",
   },
 ];
 
 const rowTwoImages = [
   {
-    url: "https://i.postimg.cc/tTLmmVmv/one.png",
+    url: "/one (1).png",
   },
   {
-    url: "https://i.postimg.cc/hPR5LTmf/two.png",
+    url: "/two (1).png",
   },
   {
-    url: "https://i.postimg.cc/7Zxtc4m4/four.png",
+    url: "/four (1).png",
   },
   {
-    url: "https://i.postimg.cc/tJQ2zGYL/three.png",
+    url: "/three (1).png",
   },
   {
-    url: "https://i.postimg.cc/XNd2YqP3/five.png",
+    url: "/five (1).png",
   },
 ];
 
