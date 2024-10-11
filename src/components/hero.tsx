@@ -88,29 +88,83 @@ const Hero = (props: Props) => {
         <div className="w-[100vw] mb-5 md:mb-20 relative">
           <div className="rotate-[-4deg] mt-10 md:mt-[6.5rem]">
             <MarQuee>
-              {rowOneImages.map((i, index) => (
-                <Image
-                  src={i.url}
-                  key={index}
-                  alt=""
-                  loading="lazy"
-                  className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
-                  width={500}
-                  height={300}
-                />
-              ))}
+              <Image
+                src="/1.webp"
+                alt=""
+                loading="lazy"
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/2.webp"
+                alt=""
+                loading="lazy"
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/3.webp"
+                alt=""
+                loading="lazy"
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/4.webp"
+                alt=""
+                loading="lazy"
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/5.webp"
+                alt=""
+                loading="lazy"
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
             </MarQuee>
             <MarQuee>
-              {rowTwoImages.map((i, index) => (
-                <Image
-                  src={i.url}
-                  key={index}
-                  alt=""
-                  className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
-                  width={500}
-                  height={300}
-                />
-              ))}
+              <Image
+                src="/6.webp"
+                alt=""
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/7.webp"
+                alt=""
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/8.webp"
+                alt=""
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/9.webp"
+                alt=""
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
+              <Image
+                src="/10.webp"
+                alt=""
+                className="md:m-4 w-[200px] m-2 md:w-[300px] rounded-[20px]"
+                width={500}
+                height={300}
+              />
             </MarQuee>
           </div>
         </div>
