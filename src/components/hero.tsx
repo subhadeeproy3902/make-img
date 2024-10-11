@@ -78,7 +78,7 @@ const Hero = (props: Props) => {
             Github <Github size={18} />
           </Link>
           <Link
-            href="#get-started"
+            href="#generator"
             className="w-full flex gap-2 items-center justify-center sm:w-auto px-8 py-2 rounded-lg bg-green-500 text-white font-semibold text-lg hover:bg-green-600 transition-colors"
           >
             Get Started
