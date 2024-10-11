@@ -16,6 +16,14 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '10mb',
     },
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "pixlet.net", // * wildcard on dynamic part of domain url
+        },
+      ],
+    }
   },
 };
 
