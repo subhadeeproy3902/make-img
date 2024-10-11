@@ -145,7 +145,7 @@ export function DreamForgeComponent() {
 
   return (
     <>
-      <div className="bg-[#040107] text-purple-50 flex justify-center items-center w-full">
+      <div className="bg-[#040107] text-purple-50 flex justify-center items-center w-full" id="generator">
         <div className="max-w-7xl mt-20 sm:mt-0 w-full flex flex-col lg:flex-row">
           <div className="w-full lg:w-1/2 p-6 lg:p-8 flex flex-col justify-start mt-2">
             <motion.div
