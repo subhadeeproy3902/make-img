@@ -9,37 +9,37 @@ type Props = {};
 
 const rowOneImages = [
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/one.png",
+    url: "https://i.postimg.cc/fT1k2q8w/one.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/two.png",
+    url: "https://i.postimg.cc/4xhPqMZw/two.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/three.png",
+    url: "https://i.postimg.cc/SsVfcb7Q/three.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/four.png",
+    url: "https://i.postimg.cc/hGsd5bJp/four.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/large-slider/five.png",
+    url: "https://i.postimg.cc/ZKv65dg5/five.png",
   },
 ];
 
 const rowTwoImages = [
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/one.png",
+    url: "https://i.postimg.cc/tTLmmVmv/one.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/two.png",
+    url: "https://i.postimg.cc/hPR5LTmf/two.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/three.png",
+    url: "https://i.postimg.cc/7Zxtc4m4/four.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/four.png",
+    url: "https://i.postimg.cc/tJQ2zGYL/three.png",
   },
   {
-    url: "https://pixner.net/aikeu/assets/images/banner/small-slider/five.png",
+    url: "https://i.postimg.cc/XNd2YqP3/five.png",
   },
 ];
 

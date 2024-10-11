@@ -24,7 +24,9 @@ import {
 } from "./ui/select";
 import { toast } from "sonner";
 import Gallery from "./gallery";
-import { getImages, postImage } from "@/actions/images.actions";
+import { getImageByUrl, getImages, postImage } from "@/actions/images.actions";
+
+const apiUrl = process.env.NEXT_PUBLIC_SERVER_URL!;
 
 export interface ImageProps {
   id: string;
@@ -56,7 +58,7 @@ export function DreamForgeComponent() {
     setIsImageGenerated(false);
     try {
       const res = await fetch(
-        `https://img.subha9-5roy350-40b.workers.dev/?prompt=${encodeURIComponent(
+        `${apiUrl}/?prompt=${encodeURIComponent(
           prompt
         )}&guidance=${guidance}&strength=${strength}&model=${aiModel}`,
         {
@@ -114,12 +116,24 @@ export function DreamForgeComponent() {
     reader.readAsDataURL(blob);
     reader.onloadend = async () => {
       const data = reader.result;
+      const isPublished = await getImageByUrl(data as string);
+      if (isPublished) {
+        toast.error("Image already published", {
+          icon: <Zap className="w-6 h-6" />,
+        });
+        setLoading(false);
+        return;
+      }
       await uploadImage(data as string);
     };
   };
 
   useEffect(() => {
+    setLoading(true);
     getAllImages();
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
   }, []);
 
   const getAllImages = async () => {
@@ -317,10 +331,15 @@ export function DreamForgeComponent() {
         </div>
       </div>
       <div className="bg-[#040107] text-purple-50 flex justify-center items-center w-full">
-        <div className="flex justify-center items-center w-full flex-col">
+        <div className="flex justify-center items-center w-full flex-col mb-36">
           <h1 className="text-4xl lg:text-5xl font-bold my-20 bg-gradient-to-b from-white to-green-900/30 bg-clip-text text-transparent mont">
             View Gallery
           </h1>
+          {loading && (
+            <div className="flex items-center justify-center">
+              <Loader className="w-10 h-10 animate-spin" />
+            </div>
+          )}
           <Gallery items={allImages} />
         </div>
       </div>

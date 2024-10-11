@@ -3,16 +3,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight, Download, Link, X } from "lucide-react";
+import { ArrowUpRight, Download, X } from "lucide-react";
 import { ImageProps } from "./dream-forge";
 import { Button } from "./ui/button";
+
+const variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 function Gallery({ items }: { items: ImageProps[] }) {
   const [selected, setSelected] = useState(null);
 
   return (
     <>
-      <div className="container mx-auto p-4 mb-24">
+      <div className="container mx-auto p-4">
         <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-8">
           <>
             {items.map((item, index) => (
@@ -33,7 +44,7 @@ function Gallery({ items }: { items: ImageProps[] }) {
 
 interface ImageItemProps {
   item: ImageProps;
-  index: number | string;
+  index: number;
   setSelected: any;
 }
 
@@ -48,6 +59,13 @@ function ImageItem({ item, index, setSelected }: ImageItemProps) {
       ref={ref}
       className="inline-block group w-full relative dark:bg-black bg-white  before:absolute before:top-0 before:content-[''] before:h-full before:w-full hover:before:bg-gradient-to-t dark:before:from-gray-900  before:from-gray-200/90 before:from-5% before:to-transparent before:to-90% cursor-pointer rounded-md"
       onClick={() => setSelected(item)}
+      variants={variants}
+      transition={{
+        duration: 1,
+        delay: index * 0.1,
+        ease: "easeInOut",
+      }}
+      viewport={{ amount: 0 }}
     >
       <motion.img
         layoutId={`card-${item.id}`}
@@ -115,7 +133,7 @@ function Modal({ selected, setSelected }: ModalProps) {
     link.download = `${selected!.prompt}.png`;
     document.body.appendChild(link);
     link.click();
-  }
+  };
 
   return (
     <AnimatePresence>

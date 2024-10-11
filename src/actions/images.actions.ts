@@ -13,6 +13,16 @@ export async function postImage(url: string, prompt: string) {
   return image
 }
 
+export async function getImageByUrl(url: string) {
+  const image = await db.images.findUnique({
+    where: {
+      url
+    }
+  })
+
+  return image
+}
+
 export async function getImages() {
   // Sorted by newest first
   const images = await db.images.findMany({
