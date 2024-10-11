@@ -9,37 +9,37 @@ type Props = {};
 
 const rowOneImages = [
   {
-    url: "/one.png",
+    url: "/one.webp",
   },
   {
-    url: "/two.png",
+    url: "/two.webp",
   },
   {
-    url: "/three.png",
+    url: "/three.webp",
   },
   {
-    url: "/four.png",
+    url: "/four.webp",
   },
   {
-    url: "/five.png",
+    url: "/five.webp",
   },
 ];
 
 const rowTwoImages = [
   {
-    url: "/one (1).png",
+    url: "/one (1).webp",
   },
   {
-    url: "/two (1).png",
+    url: "/two (1).webp",
   },
   {
-    url: "/four (1).png",
+    url: "/four (1).webp",
   },
   {
-    url: "/three (1).png",
+    url: "/three (1).webp",
   },
   {
-    url: "/five (1).png",
+    url: "/five (1).webp",
   },
 ];
 
