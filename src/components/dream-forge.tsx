@@ -213,6 +213,9 @@ export function DreamForgeComponent() {
                       <SelectItem value="sdxl-base">
                         Stable Diffusion Normal 😎
                       </SelectItem>
+                      <SelectItem value="flux">
+                        Flux Schnell (Best Ever) 🚀
+                      </SelectItem>
                       <SelectItem value="dream">The Dreamshaper 🪄</SelectItem>
                     </SelectContent>
                   </Select>
