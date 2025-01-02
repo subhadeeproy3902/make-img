@@ -1,3 +1,5 @@
+![](https://i.postimg.cc/y88DYVKn/940-1x-shots-so-1.webp)
+
 # AI Image Generator
 
 An AI-powered image generation platform where users can create stunning images using advanced models such as **Stable Diffusion SDXL - Lightning**, **SDXL-Base**, or **DreamShaper**. This platform allows users to **publish** their generated images for others to explore and download.
